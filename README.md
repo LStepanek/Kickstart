@@ -1,2 +1,2 @@
-# Kickstart
-My solutions to Kickstart problems.
+# [Kickstart](http://code.google.com/codejam/kickstart)
+My solutions to [Kickstart](http://code.google.com/codejam/kickstart) problems.
