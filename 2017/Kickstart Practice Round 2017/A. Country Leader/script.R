@@ -33,12 +33,12 @@ solveTheCase <- function(my_case){
 	
     my_lengths <- unlist(lapply(
         lapply(
-		    lapply(
+	    lapply(
                 my_case,
                 function(x) strsplit(x, split = "")[[1]]
             ),
-			function(x) x[x != " "]
-		),
+	    function(x) x[x != " "]
+	),
         function(x) length(unique(x))
     ))
     
