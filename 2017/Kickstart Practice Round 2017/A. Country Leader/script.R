@@ -27,9 +27,9 @@ setwd(
 
 solveTheCase <- function(my_case){
     
-	# '''
-	# Returns a solution for one case of the input data.
-	# '''
+    # '''
+    # Returns a solution for one case of the input data.
+    # '''
 	
     my_lengths <- unlist(lapply(
         lapply(
