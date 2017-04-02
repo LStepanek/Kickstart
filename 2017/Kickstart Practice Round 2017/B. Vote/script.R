@@ -38,30 +38,8 @@ solveTheCase <- function(
     N <- as.integer(strsplit(my_case, split = " ")[[1]][1])
     M <- as.integer(strsplit(my_case, split = " ")[[1]][2])
     
-    my_grid <- matrix(rep(0, (M + 1) * (N + 1)), nrow = M + 1)
-    
-    my_grid[1, ] <- rep(1, N + 1)
-    
-    if(M > 0){
-        
-        for(i in 2:(M + 1)){
+    return((N - M) / (N + M))
             
-            for(j in 1:(N + 1)){
-                
-                if(j > i){
-                    
-                    my_grid[i, j] <- my_grid[i - 1, j] + my_grid[i, j - 1]
-                    
-                }
-                
-            }
-            
-        }        
-        
-    }
-    
-    return(my_grid[M + 1, N + 1] / choose(M + N, N))
-        
 }
 
 
