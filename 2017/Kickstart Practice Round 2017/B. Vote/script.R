@@ -38,6 +38,13 @@ solveTheCase <- function(
     N <- as.integer(strsplit(my_case, split = " ")[[1]][1])
     M <- as.integer(strsplit(my_case, split = " ")[[1]][2])
     
+    ## We can prove that number of possible ways A stays in the lead
+    ## the entire time is the (N - 1, M)-th term of Catalan's triangle. So
+    ## that $c_{N - 1, M} = \frac{(N + M - 1)! \cdot (N - M)}{N! \cdot M!}$.
+    ## And the number of all the ways the election could go is
+    ## ${{N + M}\choose{N}} = \frac{(N + M)!}{N! \cdot M!}$;
+    ## a result of division of the two numbers is $\frac{N - M}{N + M}$.
+    
     return((N - M) / (N + M))
             
 }
