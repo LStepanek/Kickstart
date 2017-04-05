@@ -47,25 +47,32 @@ solveTheCase <- function(
     ## number of squares that can be found by joining any 4 dots in
     ## the matrix is given by formula
     ##
-    ## $$ \sum_{i = 1}^{N - 1} (N - i) \cdot (M - i) \cdot i $$,
+    ## $$
+    ##   \sum_{i = 1}^{N - 1} (N - i) \cdot (M - i) \cdot i = \\
+    ##   \sum_{i = 1}^{N - 1} N \cdot M \cdot i - (N + M) \cdot i ^ 2 + i ^ 3
+    ## $$,
     ##
     ## where $(N − i) \cdot (M − i)$ counts all squares of sidelength $i$
     ## and sides parallel to the rows and columns and multiplies it by
     ## the amount of squares we get when we slide their corners along
     ## those sides $(\cdot i)$.
     
-    output <- 0
+    ## addend $ \sum_{i = 1}^{N - 1} N \cdot M \cdot i $ ----------------------
     
-    for(i in 1:(N - 1)){
-        
-        output <- sum(
-            output,
-            ((N - i) %% modulus) * ((M - i) %% modulus) * (i %% modulus)
-        )
-        
-    }
+    part_1 <- N * (N + 1) / 2 * (N * M)
     
-    return(output %% modulus)
+    
+    ## addend $ \sum_{i = 1}^{N - 1} (N + M) \cdot \cdot i ^ 2 $ --------------
+    
+    part_2 <- (N + 1) * N * (2 * N + 1) / 6 * (N + M)
+    
+    
+    ## addend $ \sum_{i = 1}^{N - 1} i ^ 3 $ ----------------------------------
+    
+    part_3 <- (N * (N + 1) / 2) ^ 2   
+    
+    
+    return((part_1 - part_2 + part_3) %% modulus)
             
 }
 
@@ -146,7 +153,6 @@ writeLines(
 ###############################################################################
 ###############################################################################
 ###############################################################################
-
 
 
 
