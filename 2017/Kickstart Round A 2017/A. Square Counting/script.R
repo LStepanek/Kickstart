@@ -41,7 +41,7 @@ solveTheCase <- function(
     
     M <- max(R, C)
     N <- min(R, C)
-        
+    
     ## We have a matrix made up of $R \times C$ dots. Let M be maximum
     ## of (R, C) and N let be minimum of (R, C). We can prove that
     ## number of squares that can be found by joining any 4 dots in
